@@ -8,8 +8,9 @@ public class Gerente extends Empregado {
 		setNome(nome);
 		setSalarioBase(salario);
 		setCargo(cargo);
-		setListaDeBonus(listaDeBonus);
-	
+		
+		
 	}
+
 	
 }

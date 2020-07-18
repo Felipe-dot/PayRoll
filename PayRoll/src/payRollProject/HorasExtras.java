@@ -12,13 +12,14 @@ public class HorasExtras extends Bonus {
 		setQtdeHoras(qtdeHorasExtras);
 		setBonusHoraExtra(calculandoBonus(d));
 		
-	}		
+	}
+	
 	@Override
 	public double calculandoBonus(double salarioBase) {
 		double bonusHora = salarioBase * getQtdeHoras() * 0.001; 
 		return bonusHora;
 	}
-
+	
 	public int getQtdeHoras() {
 		return QtdeHoras;
 	}
@@ -42,7 +43,7 @@ public class HorasExtras extends Bonus {
 	public void setBonusHoraExtra(Double bonusHoraExtra) {
 		this.bonusHoraExtra = bonusHoraExtra;
 	}
-
-
+	
+	
 }
 

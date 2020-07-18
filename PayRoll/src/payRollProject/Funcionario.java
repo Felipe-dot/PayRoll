@@ -9,7 +9,9 @@ public class Funcionario extends Empregado {
 		setSalarioBase(salario);
 		setCargo(cargo);
 		setListaDeBonus(listaDeBonus);
+		super.calculandoValorBonus();
+		
 	}
-
+	
 
 }

@@ -7,9 +7,15 @@ abstract class Empregado {
 	private String nome;
 	private String cargo;
 	private Double salarioBase;
-	private ArrayList<Bonus> listaDeBonus;
+	private ArrayList<Bonus> listaDeBonus = new ArrayList<Bonus>();
 	private Double valorDosBonus;
 	private Double salarioFinal;
+	
+	public Empregado() {
+		valorDosBonus = 0.0;
+		salarioFinal = 0.0;
+		setValorDosBonus(calculandoValorBonus());
+	}
 	
 	public String getNome() {
 		return nome;
@@ -27,7 +33,7 @@ abstract class Empregado {
 		return valorDosBonus;
 	}
 	public void setValorDosBonus(Double valorDosBonus) {
-		this.valorDosBonus = valorDosBonus;
+		valorDosBonus = calculandoValorBonus();
 	}
 	public Double getSalarioFinal() {
 		return salarioFinal;
@@ -51,5 +57,16 @@ abstract class Empregado {
 	public void setListaDeBonus(ArrayList<Bonus> listaDeBonus) {
 		this.listaDeBonus = listaDeBonus;
 	}
+	
+	public double calculandoValorBonus() {
+		double totalDeBonus = 0;
+		for(Bonus bonus: getListaDeBonus()) {
+			totalDeBonus += bonus.calculandoBonus(getSalarioBase());
+		}
+		
+		return totalDeBonus;	
+	}
+
+
 	
 }
